@@ -1,0 +1,33 @@
+.ppal_structure {
+  min-height: calc(100vh - 260px);
+}
+
+.ppal_container_img {
+  background-image: url(../../../assets/img/plano-completo-personas-viajando-tren-min.jpg);
+  background-position: top;
+  height: 72.5vh;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ppal_text {
+  padding: 15rem;
+  text-align: end;
+  color: azure;
+}
+
+.ppal_text h2 {
+  font-size: var(--font-maximo);
+  font-weight: bold;
+  height: 58px;
+  -webkit-text-stroke: 2px var(--negro-claro);
+  text-shadow: 5px 3px 3px var(--negro-medio);
+}
+
+.ppal_text p {
+  font-size: var(--font-xlarge);
+  height: 5px;
+  text-shadow: 5px 3px 3px black;
+}

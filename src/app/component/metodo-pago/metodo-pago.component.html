@@ -1,0 +1,22 @@
+<div class="container p-4">
+    <div class="card-body">
+        <table datatable [dtOptions]="dtOptions" class="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCION</th>
+                    <th>TICKETS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of pagos">
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.descripcion}}</td>
+                    <td>{{item.tickets}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

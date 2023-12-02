@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="card-body">
+        <table datatable [dtOptions]="dtOptions" class="tabla">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>APELLIDO</td>
+                    <td>NOMBRE</td>
+                    <td>EMAIL</td>
+                    <td>TELEFONO</td>
+                    <td>TIPO DNI</td>
+                    <td>DNI</td>
+                    <td>ACCIONES</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of usuarioReg">
+                    <td>{{item.id}}</td>
+                    <td>{{item.apellido}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.telefono}}</td>
+                    <td>{{item.tipoDocId}}</td>
+                    <td>{{item.nroDocumento}}</td>
+                    <td>
+                        <button class="acciones">Editar</button>
+                        <button class="acciones">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

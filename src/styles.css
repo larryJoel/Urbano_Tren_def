@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+/*Nombre de los estilos*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    /*Fuentes*/
+    --Font-sitio:'Inter',sans-serif;
+    /*Font-size*/
+    --font-maximo:5em;
+    --font-max-medios:4.6em;
+    --titulos-text:4em;
+    --font-jumbo:3.8em;
+    --font-xlarge:3em;
+    --subtitulos:2.4em;
+    --contenido:1.8em;
+    --font-small:1.6em;
+    --font-xsmall:1.4em;
+    --font-minimal:1em;
+    --font-xminimal:0.5em;
+
+    /*Spaciado*/
+    --spacing-xxl: 24rem;
+    --spacing-128:12.8rem;
+    --spacing-68:6.8rem;
+    --spacing-36:3.6rem;
+    --spacing-28:2.8rem;
+    --spacing-24:2.4rem;
+    --spacing-20:2rem;
+    --spacing-16:1.6rem;
+    --spacing-12:1.2rem;
+    --spacing-10:1rem;
+    --spacing-8:0.8rem;
+    --spacing-6:0.6rem;
+
+    /*paleta de colores*/
+    /*--verde-base: #6AEA1C;*/
+    --verde-base: #6AEA1C;
+    --verde-medio:#9CED6B;
+    --verde-claro:#BCF49A;
+    --verde-agua:#EBF8E3;
+    --rojo_base:#FF3333;
+    --rojo-medio:#FE5757;
+    --rojo-claro:#FFB4B4;
+    --rojo-agua:#FFEDED;
+    --azul-base:#0F5FFA;
+    --azul-medio:#3E7FFF;
+    --azul-claro:#98BBFF;
+    --azul-agua:#CDDEFF;
+    --negro-base:#000000;
+    --negro-medio:#212020;
+    --negro-claro:#736E6E;
+    --negro-agua:#D4D0D0;
+}
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/*General*/
+html{
+    font-size: 62.5%; /*por defecto los nvegadores usan 16px*/
+    /*Qui queda la fuente en 10px = 62.5%*/
+    color: var(--black-base);
+    font-family: var(--font-Contenido);
+    font-size: var(--font-minimal);
+}
+
+.contenedor{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+   color:inherit; /*Color heredado*/
+    color: inherit; 
+}
+
+

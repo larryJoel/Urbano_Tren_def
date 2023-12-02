@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="fact">
+        <div class="info">
+            <h1 class="text-center">Factura</h1>
+            <p><strong>N° Factura:</strong> {{facturas.id_factura}}</p>
+        </div>
+        <div class="info">
+            <p><strong>Fecha de Emisión:</strong> {{facturas.fecha_emision}}</p>
+        </div>
+        <div class="info">
+            <p><strong>Detalle:</strong> {{facturas.descripcion}}</p>
+        </div>
+        <div class="info">
+            <p><strong>Total:</strong> {{facturas.total}}</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-left">Detalle de Factura</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Descripción:</th>
+                        <th scope="col">Precio Unitario </th>
+                        <th scope="col">Cantidad de pasajes</th>
+                        <th scope="col">Subtotal </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of detalleFacturas">
+                        <td>{{ item.descripcion }}</td>
+                        <td>{{ item.precio_unitario }}</td>
+                        <td>{{ item.cantidad }}</td>
+                        <td>{{ item.subTotal }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+<h1 class="text-center">Ticket</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-left">Detalle de ticket</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha creacion:</th>
+                        <th scope="col">fechaEdit</th>
+                        <th scope="col">fechaExpira</th>
+                        <th scope="col">estadoTicket </th>
+                        <th scope="col"> description </th>
+                        <th scope="col"> tipo </th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of ticket">
+                        <td>{{ item.fechaCreate }}</td>
+                        <td>{{ item.fechaEdit }}</td>
+                        <td>{{ item.fechaExpira }}</td>
+                        <td>{{ item.estadoTicket }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.tipo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="fact">
+    <div class="info" >
+      <h1 class="text-center">Ticket</h1>
+        <p><strong>Fecha creacion:</strong> {{ticket.fechaCreate}}</p>
+    </div>
+    <div class="info">
+        <p><strong>fechaEdit:</strong> {{ticket.fechaEdit}}</p>
+    </div>
+    <div class="info">
+      <p><strong>fechaExpira:</strong> {{ticket.fechaExpira}}</p>
+  </div>
+    <div class="info">
+        <p><strong>estadoTicket:</strong> {{ticket.estadoTicket}}</p>
+    </div>
+    <div class="info">
+        <p><strong>description:</strong> {{ticket.description}}</p>
+    </div>
+    <div class="info">
+        <p><strong>Tipo:</strong> {{ticket.tipo}}</p>
+    </div>
+  </div> -->
+
+<!--  
+  "id": 0,
+  "fechaCreate": "2023-11-20T00:24:10.658Z",
+  "fechaEdit": "2023-11-20T00:24:10.658Z",
+  "fechaExpira": "2023-11-20T00:24:10.658Z",
+  "estadoTicket": "string",
+  "tipoTicketId": 0,
+  "description": "string",
+  "tipo": "string",-->

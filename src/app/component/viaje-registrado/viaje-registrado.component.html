@@ -1,0 +1,23 @@
+<div class="container p-4">
+    <div class="card-body">
+      <table datatable [dtOptions]="dtOptions" class="row-border hover">
+        <thead>
+          <tr>
+            <th>Hora de salida</th>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>disponible</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let item of opciones">
+            <td>{{item.horarioSalida}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.destino}}</td>
+            <td>{{item.disponible}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

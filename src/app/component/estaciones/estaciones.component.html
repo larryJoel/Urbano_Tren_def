@@ -1,0 +1,19 @@
+<div class="container p-4">
+    <div class="card-body">
+      <table datatable [dtOptions]="dtOptions" class="row-border hover">
+        <thead>
+          <tr>
+            <th>Direccion</th>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let item of estaciones">
+            <td>{{item.direccion}}</td>
+            <td>{{item.nombre}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

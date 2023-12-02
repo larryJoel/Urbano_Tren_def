@@ -1,0 +1,51 @@
+#factura {
+    display: -webkit-inline-flex;
+    border: 1px solid #410808;
+    padding: 10px;
+    margin: 10px;
+    background-color: #770c0c;
+}
+
+.item {
+    flex: 2;
+    display: -webkit-inline-flex;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    text-align: center;
+}
+
+.separator {
+    flex-basis: 100%;
+    height: 100px;
+    background-color: #ccc;
+    margin: 100px 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.detalle {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+.fact {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.info p {
+    margin: 5px 0;
+}

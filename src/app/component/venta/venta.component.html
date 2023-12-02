@@ -1,0 +1,124 @@
+<main class="container">
+    <!-- Agrega el formulario y ngModel a tu componente si aún no lo has hecho -->
+    <section class="text-center select-travel-content">
+        <form>
+            <label for="viajeSelect">Viajes Disponibles:</label><br>
+            <p>Seleccione el viaje para poder acceder a la compra de boletos</p>
+            <select [(ngModel)]="selectedOption" (ngModelChange)="activarMostrarBoletos()" id="viajeSelect" name="viajeSelect">
+                <option *ngFor="let opcion of opciones" [value]="opcion.nombre">
+                    {{ opcion.nombre }}
+                </option>
+                <option [value]="{id:0, nombre:'opcionPorDefecto'}" disabled selected>Seleccione una opción</option>
+            </select>
+            <picture class="viajeSelect_cancel_content">
+                <img (click)="desactivarMostrarBoletos()" src="../../../assets/img/file-cancel-outline.svg"
+                    alt="cancelar" title="Cancelar selección de viaje">
+            </picture>
+            <!-- Muestra información específica del viaje seleccionado -->
+        </form>
+    </section>
+    <section>
+        <div *ngIf="variable2" class="body_vacio text-center">
+            Seleccione un viaje...!
+        </div>
+    </section>
+    <section *ngIf="variable">
+        <!-- <section> -->
+        <div class="body_content container">
+            <div class="text-center">
+                <p class="body_title">Selección de boletos</p>
+                <p class="body_descrip">Seleccione el tipo de boleto y marque la cantidad que desea comprar</p>
+            </div>
+                <div>
+                    <div class="body_type_content">
+                        <div class="type_box">
+                            <div class="box_title_content">
+                                <p class="title_type_viaje">Basico</p>
+                            </div>
+                            <p class="box_price_title">precio: $15 </p>
+                            <input [(ngModel)]="cantBasico" (ngModelChange)="calcularTotales()"class="box_number text-center" type="number">
+
+                        </div>
+                        <div class="type_box">
+                            <div class="box_title_content">
+                                <p class="title_type_viaje">Menores</p>
+                            </div>
+                            <p class="box_price_title">Adulto: $12 </p>
+                            <input [(ngModel)]="cantMenores" (ngModelChange)="calcularTotales()"class="box_number text-center" type="number">
+                        </div>
+                        <div class="type_box">
+                            <div class="box_title_content">
+                                <p class="title_type_viaje">Mayores</p>
+                            </div>
+                            <p class="box_price_title">precio: $10 </p>
+                            <input [(ngModel)]="cantmayores" (ngModelChange)="calcularTotales()"class="box_number text-center" type="number">
+                        </div>
+                        <div class="type_box">
+                            <div class="box_title_content">
+                                <p class="title_type_viaje">Exonerado</p>
+                            </div>
+                            <p class="box_price_title">precio: $0 </p>
+                            <input [(ngModel)]="cantExonerado" (ngModelChange)="calcularTotales()"class="box_number text-center" type="number">
+                        </div>
+                    </div>
+                    <form>
+                        <div class="body_total_content">
+                            <div class="body_total">
+                                <p class="total_title">Boletos seleccionados</p>
+                                <p class="total_detail">{{cantBasico}} ticket(s) Basico: ${{totalBasico}}<br>
+                                    {{cantMenores}} ticket(s) menores: ${{totalMenores}}<br>
+                                    {{cantmayores}} ticket(s) Adultos: ${{totalMayores}}<br>
+                                    {{cantExonerado}} ticket(s) exonerados: ${{totalExonerado}} </p>
+                                <p class="total_total">TOTAL: ${{totalGeneral}}</p>
+                                 <div class="formaPago_content">
+                                    <label>Seleccione forma de pago</label>
+                                   <select>
+                                        <option *ngFor="let opcion of formapago" [value]="opcion.id">{{ opcion.nombre }}</option>
+                                    </select>
+                                </div> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pagar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </section>
+
+</main>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Agregue sus datos personales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="sendForm()">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Nombre:</label>
+                        <input [(ngModel)]="formData.nombre" name="nombre" [ngModelOptions]="{standalone:true}"
+                            type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Apellido:</label>
+                        <input [(ngModel)]="formData.apellido" name="apellido" [ngModelOptions]="{standalone:true}"
+                            type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input [(ngModel)]="formData.email" name="email" [ngModelOptions]="{standalone:true}"
+                            type="email" class="form-control" required>
+                    </div>
+                    <div>
+                        <div class="modal-footer">
+                            <button (click)="desactivarMostrarBoletos()" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary"
+                                data-bs-dismiss="modal">Pagar boleto(s)</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
